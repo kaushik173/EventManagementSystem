@@ -1,22 +1,28 @@
-using EventManagement.Web.Context;
-using EventManagement.Web.Models;
+using EventManagement.Models;
+using EventManagement.Repositories;
+using EventManagement.Services.FestivalService;
+using EventManagement.Services.MemberService.MemberService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-var connection = builder.Configuration.GetConnectionString("ConnStr");
+var connection = builder.Configuration.GetConnectionString("ConnStr") ?? throw new InvalidOperationException("Connection string 'ConnStr' not found."); 
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<EventManagementContext>(options => options.UseSqlServer(connection));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<EventManagementContext>();
 
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IUnitOfWork , UnitOfWork>();
+builder.Services.AddScoped<IMemberService , MemberService>();
+builder.Services.AddScoped<IFestivalService, FestivalService>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

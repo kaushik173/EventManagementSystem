@@ -1,8 +1,8 @@
-﻿using EventManagement.Web.Models;
+﻿using EventManagement.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace EventManagement.Web.Context
+namespace EventManagement.Repositories
 {
     public class EventManagementContext : IdentityDbContext<ApplicationUser>
     {

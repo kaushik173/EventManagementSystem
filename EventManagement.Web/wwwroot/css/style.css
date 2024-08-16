@@ -1793,9 +1793,10 @@ fieldset:disabled a.btn {
   pointer-events: none; }
 
 .btn-primary {
-  color: #fff;
-  background-color: #7571f9;
-  border-color: #7571f9; }
+    color: #fff;
+    background-color: #332dec;
+    border-color: #7571f9;
+}
   .btn-primary:hover {
     color: #fff;
     background-color: #514cf7;
@@ -1908,9 +1909,10 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(242, 157, 86, 0.5); }
 
 .btn-danger {
-  color: #fff;
-  background-color: #ff5e5e;
-  border-color: #ff5e5e; }
+    color: #fff;
+    background-color: #c50505;
+    border-color: #ff5e5e;
+}
   .btn-danger:hover {
     color: #fff;
     background-color: #ff3838;
@@ -3989,7 +3991,7 @@ button.close {
   border-radius: 0.3rem;
   outline: 0; }
 
-.modal-backdrop {
+/*.modal-backdrop {
   position: fixed;
   top: 0;
   right: 0;
@@ -4000,7 +4002,7 @@ button.close {
   .modal-backdrop.fade {
     opacity: 0; }
   .modal-backdrop.show {
-    opacity: 0.5; }
+    opacity: 0.5; }*/
 
 .modal-header {
   display: flex;

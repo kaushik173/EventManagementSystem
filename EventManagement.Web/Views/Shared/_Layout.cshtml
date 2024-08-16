@@ -10,6 +10,8 @@
     <!-- Chartist -->
     <link rel="stylesheet" href="~/plugins/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="~/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -20,8 +22,9 @@
                 <a href="index.html">
                     <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
                     <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
-                    <span class="brand-title">
-                        <img src="images/logo-text.png" alt="">
+                    <span class="brand-title" style="color: white;">
+                        The King Of Bf 🦁
+                        @* <img src="images/king_of_bf_logo_larger_text.png" alt=""> *@
                     </span>
                 </a>
             </div>
@@ -176,7 +179,7 @@
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                                 <span class="activity active"></span>
-                                <img src="images/user/1.png" height="40" width="40" alt="">
+                                <img src="images/user/form-user.png" height="40" width="40" alt="">
                             </div>
                             <div class="drop-down dropdown-profile   dropdown-menu">
                                 <div class="dropdown-content-body">
@@ -188,7 +191,6 @@
                                             <a href="email-inbox.html"><i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill badge-primary">3</div></a>
                                         </li>
 
-                                        <hr class="my-2">
                                         <li>
                                             <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
                                         </li>
@@ -207,14 +209,24 @@
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">Dashboard</li>
                     <li>
-                        <a href="javascript:void()" aria-expanded="false">
-                                <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        <a asp-controller="Home" asp-action="Index" aria-expanded="false">
+                           <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li>
                         <a asp-controller="Member" asp-action="Index" aria-expanded="false">
                             <i class="icon-badge menu-icon"></i><span class="nav-text">Members</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Festival" asp-action="Index" aria-expanded="false">
+                            <i class="fa fa-gift menu-icon"></i><span class="nav-text">Festivals</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Contribution" asp-action="Index" aria-expanded="false">
+                            <i class="fa fa-money menu-icon"></i><span class="nav-text">Member Contributions</span>
                         </a>
                     </li>
                 </ul>
@@ -250,9 +262,13 @@
     <!-- ChartistJS -->
     <script src="~/plugins/chartist/js/chartist.min.js"></script>
     <script src="~/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
-
-
-
+    <!-- SweetAlert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="~/js/dashboard/dashboard-1.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
